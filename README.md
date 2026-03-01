@@ -6,9 +6,9 @@
 
 Bookmark Keep is a Firefox & Chrome side panel extension for organizing and finding bookmarks faster.
 
-[![Chrome Users](https://img.shields.io/chrome-web-store/users/STORE_ID)](https://chromewebstore.google.com/detail/STORE_ID)
-[![Chrome Rating](https://img.shields.io/chrome-web-store/rating/STORE_ID)](https://chromewebstore.google.com/detail/STORE_ID)
-[![Chrome Version](https://img.shields.io/chrome-web-store/v/STORE_ID)](https://chromewebstore.google.com/detail/STORE_ID)
+[![Chrome Users](https://img.shields.io/chrome-web-store/users/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
+[![Chrome Rating](https://img.shields.io/chrome-web-store/rating/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
+[![Chrome Version](https://img.shields.io/chrome-web-store/v/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 
 [![Firefox Downloads](https://img.shields.io/amo/dw/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
 [![Firefox Users](https://img.shields.io/amo/users/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
@@ -142,5 +142,5 @@ When filing, include:
 ## Useful Links
 
 - Website: https://bookmarkkeep.app
-- Chrome Web Store listing: https://chromewebstore.google.com/
+- Chrome Web Store listing: https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado
 - Firefox Add-ons listing: https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep
