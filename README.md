@@ -31,6 +31,146 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 - Smart drop suggestions for where new URLs should be saved & rule-based logic
 - Light and dark appearance modes with localized UI
 
+## Detailed Feature Breakdown
+
+### Bookmark Tree & Organization
+
+- Full hierarchical bookmark tree in the browser sidebar
+- Expand/collapse individual folders plus one-click collapse/expand all
+- Recursive bookmark/folder stats badges (optional via settings)
+- Pin folders to the top of their parent folder for quicker access
+- Context menu on every item (`Edit`, `Move`, `Open`, `Sort`, `Duplicate folder`, `Delete`, etc.)
+- Folder sorting tools:
+  - Sort folders A-Z / Z-A
+  - Sort bookmarks A-Z / Z-A / newest / oldest
+  - Optional recursive bookmark sorting across subfolders
+
+### Search, Query Syntax & Autocomplete
+
+- Live search across title and URL
+- Highlighted text matches
+- Wildcard support (`*`) in text/domain/tag matching
+- Fuzzy-match fallback when direct matching is weak
+- Search command autocomplete with `>` prefixes for:
+  - `is` filters
+  - `filter` commands
+  - `view` commands
+- Built-in query aliases (localized) such as:
+  - `>is:duplicate-url`, `>is:duplicate-title`
+  - `>is:empty`, `>is:untitled`, `>is:nested`, `>is:tagged`, `>is:untagged`
+  - `>filter:domain`
+  - `>view:domain`, `>view:domain-most`, `>view:newest`, etc.
+  - `>tag:<name>` and `>-tag:<name>` (include/exclude tag terms)
+
+### Filters & Views (Non-Destructive)
+
+- Filters:
+  - Duplicate URLs
+  - Duplicate titles
+  - Tagged bookmarks
+  - Empty folders
+  - Untitled bookmarks
+  - Deeply nested folders (3+ levels)
+  - Domain filter
+- Views:
+  - By domain
+  - By domain (most bookmarks first)
+  - By newest
+  - By oldest
+  - Follow current tab domain
+  - Sorted folders only
+  - Sorted folders + bookmarks
+  - Privacy mode (blurs titles/URLs in the sidebar)
+- View/filter state is applied without rewriting bookmark data
+
+### Tags
+
+- Create, edit, and delete tags
+- Optional color-only tags or name + color tags
+- Attach/detach tags for single or multi-selected bookmarks
+- Filter/search using tag query syntax (`>tag:`, `>-tag:`, `>is:tagged`, `>is:untagged`)
+- Context menu quick-tagging with recently used tags:
+  - Up to 3 recent tags shown inline
+  - Click to toggle on/off for the current bookmark (or current selection)
+  - Long labels are truncated safely in menus
+
+### Multi-Select & Bulk Actions
+
+- Checkbox multi-select across bookmarks
+- Shift-click range selection
+- Bulk open in tabs/windows/tab groups/incognito (with safety confirmation)
+- Bulk move
+- Bulk tag
+- Bulk delete with count confirmation
+
+### Tabs & Tab Groups Integration
+
+- Sidebar `Tabs` section with collapsible buckets:
+  - Pinned tabs
+  - Tab groups
+  - Open tabs
+- Click tab rows to focus the existing tab/window
+- Tab and tab-group row context menus support bookmarking/closing selections
+- Tab group actions:
+  - Save tab group as a new bookmark folder
+  - Save tab group into an existing folder
+  - Copy all URLs
+  - Close the group (with confirmation)
+- Toolbar actions for:
+  - Bookmark all open tabs
+  - Bookmark pinned tabs
+
+### Drag & Drop
+
+- Drag bookmarks/folders to reorder or move between folders
+- Multi-item drag with count ghost
+- Drop zones above/below/inside with visual indicators
+- Drag external URLs into folders to bookmark immediately
+- Drag bookmarks to Smart Drop Zone for suggestion-based placement
+
+### Smart Drop Zone & Bookmark Rules
+
+- Drop URL(s) to get ranked folder suggestions
+- Ranking signals include:
+  - Exact URL matches
+  - Same-domain bookmark density
+  - Folder keyword relevance
+  - Learned behavior from prior saves
+  - Recent save destinations
+- Confidence labels and “why this folder” explanations
+- One-click “save with rule” for domain routing
+- Bookmark rules management UI:
+  - Match types: domain equals, URL contains, title equals, title contains
+  - Set target folder
+  - Optional tags to auto-apply
+  - Auto-save behavior
+  - Enable/disable, reorder, edit, delete bookmark rules
+
+### Recently Added
+
+- Dedicated “Recently Added” section with favicon, relative time, and folder path
+- Click path to jump to the bookmark in-tree
+- Configurable recent count (10 / 25 / 50 / 100)
+
+### Keyboard & Safety
+
+- Keyboard navigation:
+  - `ArrowUp` / `ArrowDown` to move focus
+  - `ArrowRight` / `ArrowLeft` to expand/collapse or navigate parent/child
+  - `Enter` to open bookmark or toggle folder
+  - `Delete` / `Backspace` for selected-item deletion
+- Mouse modifiers for open behavior:
+  - `Cmd/Ctrl+Click` opens in new tab
+  - `Shift+Click` opens in new window (or tab fallback)
+- Large-open confirmation threshold (configurable)
+- Confirmations for destructive operations (delete, close group, etc.)
+
+### Runtime Behavior
+
+- Reacts to external bookmark changes (create/remove/update/move)
+- Reacts to tab/tab-group lifecycle changes in near real time
+- Works without third-party network APIs or page-content access
+
 ## Detailed Options
 
 ### Views
