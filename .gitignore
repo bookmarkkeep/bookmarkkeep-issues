@@ -1,0 +1,11 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+coverage/
+**/coverage/
+releases/*.zip
+**/releases/*.zip
+apps/chrome-extension/.screenshot-profile/
+.turbo/
+.DS_Store
