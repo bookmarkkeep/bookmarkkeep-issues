@@ -43,7 +43,7 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 | `View by Sorted Folders & Bookmarks` | Sorts folders and bookmarks A-Z inside each folder.                  | `>view:sorted-all`                             |
 | `View by Newest`                     | Shows bookmarks from newest to oldest.                               | `>view:newest`                                 |
 | `View by Oldest`                     | Shows bookmarks from oldest to newest.                               | `>view:oldest`                                 |
-| `Follow Current Tab`                 | Shows bookmarks matching the active tab domain.                      | `>view:follow` (`>view:follow-tab` also works) |
+| `Follow Current Tab`                 | Shows bookmarks matching the active tab domain.                      | `>view:follow-tab`                              |
 | `Privacy Mode`                       | Blurs titles and URLs in the sidebar.                                | `>view:privacy`                                |
 
 ### Filters
