@@ -222,6 +222,7 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 | `Theme`              | Changes bookmark/folder icon styling set.                                      | `Default`, `Classic`, `Bookmark Keep`                                                        | `Default`              |
 | `Density`            | Adjusts list spacing and compactness.                                          | `Default`, `Comfortable`, `Compact`                                                          | `Default`              |
 | `Sync with tab zoom` | Matches sidebar text size to the active tab zoom level.                        | On / Off                                                                                     | On                     |
+| `Auto-close in fullscreen` | Automatically closes the sidebar when a page enters fullscreen mode.      | On / Off                                                                                     | On                     |
 
 #### Other
 
