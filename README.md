@@ -77,7 +77,7 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 
 | Setting              | What it does                                                                   | Values                                                                                       | Default                |
 | -------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------------------- |
-| `Language`           | Overrides the extension UI language independently of browser language.         | `Use browser language` or one of: `de`, `en_CA`, `en_US`, `es`, `fr`, `fr_CA`, `ja`, `pt_BR` | `Use browser language` |
+| `Language`           | Overrides the extension UI language independently of browser language.         | `Use browser language` or one of: `de`, `en_CA`, `en_US`, `es`, `fr`, `fr_CA`, `it`, `ja`, `ko`, `nl`, `pt_BR`, `zh_CN`, `zh_TW` | `Use browser language` |
 | `Appearance`         | Chooses whether the extension follows system colors or forces light/dark mode. | `System`, `Light`, `Dark`                                                                    | `System`               |
 | `Theme`              | Changes bookmark/folder icon styling set.                                      | `Default`, `Classic`, `Bookmark Keep`                                                        | `Default`              |
 | `Density`            | Adjusts list spacing and compactness.                                          | `Default`, `Comfortable`, `Compact`                                                          | `Default`              |
@@ -110,19 +110,19 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 
 ## Locales
 
-- en_US
-- en_CA
-- de
-- es
-- fr
-- fr_CA
-- it
-- ja
-- ko
-- nl
-- pt_BR
-- zh_CN
-- zh_TW
+- 🇺🇸 English (`en_US`)
+- 🇨🇦 English (`en_CA`)
+- 🇩🇪 Deutsch (`de`)
+- 🇪🇸 Español (`es`)
+- 🇫🇷 Français (`fr`)
+- 🇨🇦 Français (`fr_CA`)
+- 🇮🇹 Italiano (`it`)
+- 🇯🇵 日本語 (`ja`)
+- 🇰🇷 한국어 (`ko`)
+- 🇳🇱 Nederlands (`nl`)
+- 🇧🇷 Português (`pt_BR`)
+- 🇨🇳 简体中文 (`zh_CN`)
+- 🇹🇼 繁體中文 (`zh_TW`)
 
 ## Report A Bug
 
