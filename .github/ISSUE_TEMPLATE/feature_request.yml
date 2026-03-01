@@ -1,0 +1,50 @@
+name: Feature Request
+description: Suggest an improvement for Bookmark Keep (Chrome or Firefox)
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Target browser
+      description: Which extension should this apply to?
+      options:
+        - Both Chrome and Firefox
+        - Chrome only
+        - Firefox only
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What problem or friction are you facing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior/UI you want.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds or alternative approaches?
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Mockups, examples, links, or edge cases.
+    validations:
+      required: false
+
