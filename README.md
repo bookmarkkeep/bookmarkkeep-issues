@@ -4,21 +4,23 @@
 
 # Bookmark Keep
 
-Bookmark Keep is a Firefox & Chrome side panel extension for organizing and finding bookmarks faster.
+Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing and finding bookmarks faster.
+
+### Chrome
 
 [![Chrome Users](https://img.shields.io/chrome-web-store/users/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 [![Chrome Rating](https://img.shields.io/chrome-web-store/rating/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 [![Chrome Version](https://img.shields.io/chrome-web-store/v/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 
+### Firefox
+
 [![Firefox Downloads](https://img.shields.io/amo/dw/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
 [![Firefox Users](https://img.shields.io/amo/users/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
 [![Firefox Version](https://img.shields.io/amo/v/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
 
-## Privacy
+### Edge
 
-- No browsing-history API permission required
-- No page-content access required
-- No third-party API calls required
+[![Edge Listing](https://img.shields.io/badge/Edge-Coming%20Soon-0078D7?logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/bookmark-keep/ijdbpjibkibglmodalmcgclicblemkbh)
 
 ## Feature Highlights
 
@@ -30,6 +32,12 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 - Drag and drop reordering, including cross-folder moves
 - Smart drop suggestions for where new URLs should be saved & rule-based logic
 - Light and dark appearance modes with localized UI
+
+## Privacy
+
+- No browsing-history API permission required
+- No page-content access required
+- No third-party API calls required
 
 ## Detailed Feature Breakdown
 
@@ -175,16 +183,16 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 
 ### Views
 
-| View option                          | What it does                                                         | Search shortcut                                |
-| ------------------------------------ | -------------------------------------------------------------------- | ---------------------------------------------- |
-| `View by Domain`                     | Groups bookmarks by website domain.                                  | `>view:domain`                                 |
-| `View by Domain (Most Bookmarks)`    | Groups by domain and sorts groups by bookmark count (highest first). | `>view:domain-most`                            |
-| `View by Sorted Folder`              | Sorts folders alphabetically, keeps bookmark order.                  | `>view:sorted-folders`                         |
-| `View by Sorted Folders & Bookmarks` | Sorts folders and bookmarks A-Z inside each folder.                  | `>view:sorted-all`                             |
-| `View by Newest`                     | Shows bookmarks from newest to oldest.                               | `>view:newest`                                 |
-| `View by Oldest`                     | Shows bookmarks from oldest to newest.                               | `>view:oldest`                                 |
-| `Follow Current Tab`                 | Shows bookmarks matching the active tab domain.                      | `>view:follow-tab`                              |
-| `Privacy Mode`                       | Blurs titles and URLs in the sidebar.                                | `>view:privacy`                                |
+| View option                          | What it does                                                         | Search shortcut        |
+| ------------------------------------ | -------------------------------------------------------------------- | ---------------------- |
+| `View by Domain`                     | Groups bookmarks by website domain.                                  | `>view:domain`         |
+| `View by Domain (Most Bookmarks)`    | Groups by domain and sorts groups by bookmark count (highest first). | `>view:domain-most`    |
+| `View by Sorted Folder`              | Sorts folders alphabetically, keeps bookmark order.                  | `>view:sorted-folders` |
+| `View by Sorted Folders & Bookmarks` | Sorts folders and bookmarks A-Z inside each folder.                  | `>view:sorted-all`     |
+| `View by Newest`                     | Shows bookmarks from newest to oldest.                               | `>view:newest`         |
+| `View by Oldest`                     | Shows bookmarks from oldest to newest.                               | `>view:oldest`         |
+| `Follow Current Tab`                 | Shows bookmarks matching the active tab domain.                      | `>view:follow-tab`     |
+| `Privacy Mode`                       | Blurs titles and URLs in the sidebar.                                | `>view:privacy`        |
 
 ### Filters
 
@@ -215,14 +223,14 @@ Bookmark Keep is a Firefox & Chrome side panel extension for organizing and find
 
 #### Look & Feel
 
-| Setting              | What it does                                                                   | Values                                                                                       | Default                |
-| -------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------------------- |
-| `Language`           | Overrides the extension UI language independently of browser language.         | `Use browser language` or one of: `de`, `en_CA`, `en_US`, `es`, `fr`, `fr_CA`, `it`, `ja`, `ko`, `nl`, `pt_BR`, `zh_CN`, `zh_TW` | `Use browser language` |
-| `Appearance`         | Chooses whether the extension follows system colors or forces light/dark mode. | `System`, `Light`, `Dark`                                                                    | `System`               |
-| `Theme`              | Changes bookmark/folder icon styling set.                                      | `Default`, `Classic`, `Bookmark Keep`                                                        | `Default`              |
-| `Density`            | Adjusts list spacing and compactness.                                          | `Default`, `Comfortable`, `Compact`                                                          | `Default`              |
-| `Sync with tab zoom` | Matches sidebar text size to the active tab zoom level.                        | On / Off                                                                                     | On                     |
-| `Auto-close in fullscreen` | Automatically closes the sidebar when a page enters fullscreen mode.      | On / Off                                                                                     | On                     |
+| Setting                    | What it does                                                                   | Values                                                                                                                           | Default                |
+| -------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| `Language`                 | Overrides the extension UI language independently of browser language.         | `Use browser language` or one of: `de`, `en_CA`, `en_US`, `es`, `fr`, `fr_CA`, `it`, `ja`, `ko`, `nl`, `pt_BR`, `zh_CN`, `zh_TW` | `Use browser language` |
+| `Appearance`               | Chooses whether the extension follows system colors or forces light/dark mode. | `System`, `Light`, `Dark`                                                                                                        | `System`               |
+| `Theme`                    | Changes bookmark/folder icon styling set.                                      | `Default`, `Classic`, `Bookmark Keep`                                                                                            | `Default`              |
+| `Density`                  | Adjusts list spacing and compactness.                                          | `Default`, `Comfortable`, `Compact`                                                                                              | `Default`              |
+| `Sync with tab zoom`       | Matches sidebar text size to the active tab zoom level.                        | On / Off                                                                                                                         | On                     |
+| `Auto-close in fullscreen` | Automatically closes the sidebar when a page enters fullscreen mode.           | On / Off                                                                                                                         | On                     |
 
 #### Other
 
@@ -273,7 +281,7 @@ Open an issue here:
 
 When filing, include:
 
-- Browser (`Chrome` or `Firefox`) and version
+- Browser (`Chrome`, `Edge`, or `Firefox`) and version
 - Extension version
 - OS
 - Reproduction steps
@@ -285,3 +293,4 @@ When filing, include:
 - Website: https://bookmarkkeep.app
 - Chrome Web Store listing: https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado
 - Firefox Add-ons listing: https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep
+- Edge Add-ons listing: https://microsoftedge.microsoft.com/addons/detail/bookmark-keep/ijdbpjibkibglmodalmcgclicblemkbh
