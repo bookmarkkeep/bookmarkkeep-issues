@@ -39,6 +39,13 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 - No page-content access required
 - No third-party API calls required
 
+## Data & Sync
+
+- Tags are stored in local extension storage on the device/profile where they were created.
+- Bookmark rules are stored in extension sync storage when available, with local-storage fallback.
+- Uninstalling can remove local extension data, including tags and rules.
+- If browser account sync is unavailable or disabled, synced data may not be recoverable after uninstall.
+
 ## Detailed Feature Breakdown
 
 ### Bookmark Tree & Organization
