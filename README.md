@@ -10,21 +10,21 @@ Homepage: https://bookmarkkeep.app
 
 ### <img src="assets/chrome-logo.svg" alt="Chrome" width="18" /> Chrome
 
+[![Chrome Version](https://img.shields.io/chrome-web-store/v/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 [![Chrome Users](https://img.shields.io/chrome-web-store/users/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 [![Chrome Rating](https://img.shields.io/chrome-web-store/rating/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
-[![Chrome Version](https://img.shields.io/chrome-web-store/v/fblbobhgdajahefnbkpbdeienmpnhado)](https://chromewebstore.google.com/detail/bookmark-keep/fblbobhgdajahefnbkpbdeienmpnhado)
 
 ### <img src="assets/firefox-logo.svg" alt="Firefox" width="18" /> Firefox
 
-[![Firefox Downloads](https://img.shields.io/amo/dw/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
-[![Firefox Users](https://img.shields.io/amo/users/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
 [![Firefox Version](https://img.shields.io/amo/v/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
+[![Firefox Users](https://img.shields.io/amo/users/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
+[![Firefox Downloads](https://img.shields.io/amo/dw/bookmark-keep)](https://addons.mozilla.org/en-CA/firefox/addon/bookmark-keep/)
 
 ### <img src="assets/edge-logo.svg" alt="Edge" width="18" /> Edge
 
 [![Edge Version](https://img.shields.io/badge/dynamic/json?label=Edge%20Version&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fijdbpjibkibglmodalmcgclicblemkbh)](https://microsoftedge.microsoft.com/addons/detail/bookmark-keep/ijdbpjibkibglmodalmcgclicblemkbh)
-[![Edge Rating](https://img.shields.io/badge/dynamic/json?label=Edge%20Rating&suffix=%2F5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fijdbpjibkibglmodalmcgclicblemkbh)](https://microsoftedge.microsoft.com/addons/detail/bookmark-keep/ijdbpjibkibglmodalmcgclicblemkbh)
 [![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D7?logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/bookmark-keep/ijdbpjibkibglmodalmcgclicblemkbh)
+[![Edge Rating](https://img.shields.io/badge/dynamic/json?label=Edge%20Rating&suffix=%2F5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fijdbpjibkibglmodalmcgclicblemkbh)](https://microsoftedge.microsoft.com/addons/detail/bookmark-keep/ijdbpjibkibglmodalmcgclicblemkbh)
 
 ## Feature Highlights
 
