@@ -41,10 +41,17 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 
 ## Data & Sync
 
-- Tags are stored in local extension storage on the device/profile where they were created.
-- Bookmark rules are stored in extension sync storage when available, with local-storage fallback.
-- Uninstalling can remove local extension data, including tags and rules.
-- If browser account sync is unavailable or disabled, synced data may not be recoverable after uninstall.
+| Data type                    | Primary storage | Fallback / mirror      | Notes                                                                                      |
+| ---------------------------- | --------------- | ---------------------- | ------------------------------------------------------------------------------------------ |
+| Settings                     | Sync storage    | Local storage fallback | Keeps preferences consistent across signed-in browser profiles when sync is available.     |
+| Tags                         | Sync storage    | Local storage fallback | Tag metadata and bookmark-tag mappings sync when supported; local copy is also maintained. |
+| Bookmark rules               | Sync storage    | Local storage fallback | Rule definitions sync when available; local copy is also maintained.                       |
+| Drag & Drop-learning history | Local storage   | None                   | Device/profile-local learning and recency signals.                                         |
+
+- You can export/import settings, tags, and bookmark rules from the extension menu.
+  > Uninstalling can remove local extension data on that browser profile.
+
+> If account sync is disabled/unavailable, sync-backed data may not transfer or be recoverable across devices/profiles.
 
 ## Detailed Feature Breakdown
 
@@ -74,29 +81,51 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
   - `>is:duplicate-url`, `>is:duplicate-title`
   - `>is:empty`, `>is:untitled`, `>is:nested`, `>is:tagged`, `>is:untagged`
   - `>filter:domain`
-  - `>view:domain`, `>view:domain-most`, `>view:newest`, etc.
+  - `>view:domain`, `>view:domain-most`, `>view:tags`, `>view:tags-most`, `>view:newest`, etc.
   - `>tag:<name>` and `>-tag:<name>` (include/exclude tag terms)
 
 ### Filters & Views (Non-Destructive)
 
+> Views & filters are applied without rewriting bookmark data
+
 - Filters:
-  - Duplicate URLs
-  - Duplicate titles
-  - Tagged bookmarks
-  - Empty folders
-  - Untitled bookmarks
-  - Deeply nested folders (3+ levels)
-  - Domain filter
+  - Duplicate URLs: `>is:duplicate-url`
+    - Finds bookmarks that share the same URL
+  - Duplicate titles: `>is:duplicate-title`
+    - Finds bookmarks that share the same title
+  - Tagged bookmarks: `>is:tagged`
+    - Shows only bookmarks with at least one tag
+  - Empty folders: `>is:empty`
+    - Finds folders with no bookmarks inside
+  - Untitled bookmarks: `>is:untitled`
+    - Finds bookmarks with no title set
+  - Deeply nested folders (3+ levels): `>is:nested`
+    - Finds folders buried in deep hierarchies
+  - Domain filter: `>filter:domain <domain>`
+    - Filters results by domain pattern and supports wildcard `*`
+      - example: `>filter:domain google.com` returns bookmarks matching google.com
+      - example: `>filter:domain git*.com` returns bookmarks matching github.com and gitlab.com
 - Views:
-  - By domain
-  - By domain (most bookmarks first)
-  - By newest
-  - By oldest
-  - Follow current tab domain
-  - Sorted folders only
-  - Sorted folders + bookmarks
-  - Privacy mode (blurs titles/URLs in the sidebar)
-- View/filter state is applied without rewriting bookmark data
+  - By domain: `>view:domain`
+    - Groups bookmarks by website domain
+  - By domain (most bookmarks first): `>view:domain-most`
+    - Groups by domain and sorts domains by bookmark count descending
+  - By tag (A-Z): `>view:tags`
+    - Groups bookmarks by tag and sorts groups alphabetically
+  - By tag (most bookmarks first): `>view:tags-most`
+    - Groups bookmarks by tag and sorts groups by bookmark count descending
+  - By newest: `>view:newest`
+    - Shows bookmarks from newest to oldest
+  - By oldest: `>view:oldest`
+    - Shows bookmarks from oldest to newest
+  - Follow current tab domain: `>view:follow-tab`
+    - Shows bookmarks matching the active tab's domain
+  - Sorted folders only: `>view:sorted-folders`
+    - Sorts folder names A-Z while preserving bookmark order
+  - Sorted folders + bookmarks: `>view:sorted-all`
+    - Sorts folders and bookmarks A-Z within each folder
+  - Privacy mode: `>view:privacy`
+    - Blurs titles and URLs in the sidebar UI. Hold `Shift` to temporarily disable
 
 ### Tags
 
@@ -104,6 +133,7 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 - Optional color-only tags or name + color tags
 - Attach/detach tags for single or multi-selected bookmarks
 - Filter/search using tag query syntax (`>tag:`, `>-tag:`, `>is:tagged`, `>is:untagged`)
+- Clicking a tag pill attached to a bookmark applies `>tag:<tag>` in search
 - Context menu quick-tagging with recently used tags:
   - Up to 3 recent tags shown inline
   - Click to toggle on/off for the current bookmark (or current selection)
@@ -120,9 +150,11 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 
 ### Tabs & Tab Groups Integration
 
+> Chrome and Edge additional optional permissions (`tabs` and `tabGroups`) before tab data can be accessed.
+
 - Sidebar `Tabs` section with collapsible buckets:
   - Pinned tabs
-  - Tab groups
+  - Tab groups (Chrome)
   - Open tabs
 - Click tab rows to focus the existing tab/window
 - Tab and tab-group row context menus support bookmarking/closing selections
@@ -136,6 +168,8 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
   - Bookmark pinned tabs
 
 ### Drag & Drop
+
+> Chrome and Edge additional optional permissions (`tabs` and `tabGroups`) before the title of the dragged tab can be used.
 
 - Drag bookmarks/folders to reorder or move between folders
 - Multi-item drag with count ghost
@@ -170,10 +204,11 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 ### Keyboard & Safety
 
 - Keyboard navigation:
-  - `ArrowUp` / `ArrowDown` to move focus
-  - `ArrowRight` / `ArrowLeft` to expand/collapse or navigate parent/child
-  - `Enter` to open bookmark or toggle folder
-  - `Delete` / `Backspace` for selected-item deletion
+  - `ArrowUp` / `ArrowDown` moves focus between visible rows
+  - `ArrowRight` / `ArrowLeft` expands/collapses folders (or moves parent/child focus)
+  - `Enter` opens focused bookmark or toggles focused folder
+  - `Space` toggles the focused row checkbox (when selectable)
+  - `Delete` / `Backspace` deletes current selection, or deletes the focused bookmark when nothing is selected
 - Mouse modifiers for open behavior:
   - `Cmd/Ctrl+Click` opens in new tab
   - `Shift+Click` opens in new window (or tab fallback)
@@ -186,32 +221,28 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 - Reacts to tab/tab-group lifecycle changes in near real time
 - Works without third-party network APIs or page-content access
 
+## Browser Feature Matrix
+
+| Capability                            | Chrome                                                               | Edge                                                                 | Firefox             |
+| ------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------- |
+| Tabs section                          | Yes                                                                  | Yes                                                                  | Yes                 |
+| Tab groups support in sidebar/actions | Yes                                                                  | Yes                                                                  | No (API limitation) |
+| Split view actions                    | Yes                                                                  | Yes                                                                  | No                  |
+| Incognito/private window actions      | Supported when browser allows it and extension permission is granted | Supported when browser allows it and extension permission is granted | Not available       |
+
+## Permissions Behavior
+
+- In Chrome/Edge, using or enabling tab-powered features can trigger an optional permission request for `tabs` and `tabGroups`.
+- The permission prompt appears on first tab-feature enable/use (for example, enabling Tabs-related settings or invoking tab actions).
+- If permission is declined, Tabs-related features remain disabled until permission is granted later.
+
+## Known Limitations
+
+- Firefox tab-groups metadata/actions are unavailable due to browser API limitations.
+- Some tab actions require optional permissions and will not run until granted.
+- Auto-save bookmark rule behavior differs when the sidebar is closed vs open (depending on the setting).
+
 ## Detailed Options
-
-### Views
-
-| View option                          | What it does                                                         | Search shortcut        |
-| ------------------------------------ | -------------------------------------------------------------------- | ---------------------- |
-| `View by Domain`                     | Groups bookmarks by website domain.                                  | `>view:domain`         |
-| `View by Domain (Most Bookmarks)`    | Groups by domain and sorts groups by bookmark count (highest first). | `>view:domain-most`    |
-| `View by Sorted Folder`              | Sorts folders alphabetically, keeps bookmark order.                  | `>view:sorted-folders` |
-| `View by Sorted Folders & Bookmarks` | Sorts folders and bookmarks A-Z inside each folder.                  | `>view:sorted-all`     |
-| `View by Newest`                     | Shows bookmarks from newest to oldest.                               | `>view:newest`         |
-| `View by Oldest`                     | Shows bookmarks from oldest to newest.                               | `>view:oldest`         |
-| `Follow Current Tab`                 | Shows bookmarks matching the active tab domain.                      | `>view:follow-tab`     |
-| `Privacy Mode`                       | Blurs titles and URLs in the sidebar.                                | `>view:privacy`        |
-
-### Filters
-
-| Filter option           | What it does                                  | Search shortcut                        |
-| ----------------------- | --------------------------------------------- | -------------------------------------- |
-| `Find duplicate URLs`   | Bookmarks that share the same URL.            | `>is:duplicate-url`                    |
-| `Find duplicate titles` | Bookmarks that share the same title.          | `>is:duplicate-title`                  |
-| `Tagged bookmarks`      | Bookmarks that have at least one tag.         | `>is:tagged`                           |
-| `Filter by domain`      | Prefills `domain:` and supports wildcard `*`. | `>filter:domain` then a domain pattern |
-| `Empty folders`         | Folders with no bookmarks inside.             | `>is:empty`                            |
-| `Untitled bookmarks`    | Bookmarks with no title set.                  | `>is:untitled`                         |
-| `Deeply nested`         | Folders buried 3+ levels deep.                | `>is:nested`                           |
 
 ### Settings Options
 
@@ -221,7 +252,7 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 | ---------------------- | ---------------------------------------------------------------------------- | ----------------------- | ------- |
 | `Tabs`                 | Shows or hides the tabs section in the sidebar.                              | On / Off                | Off     |
 | `Pinned Tabs`          | Shows or hides pinned tabs in the tabs section.                              | On / Off                | Off     |
-| `Grouped Tabs`         | Shows or hides tab groups in the tabs section (Chrome only).                 | On / Off (Chrome only)  | Off     |
+| `Tab Groups`           | Shows or hides tab groups in the tabs section (Chrome/Edge).                 | On / Off (Chrome/Edge)  | Off     |
 | `Open Tabs`            | Shows or hides regular open tabs in the tabs section.                        | On / Off                | Off     |
 | `Recently Added`       | Shows or hides the Recently Added bookmarks section.                         | On / Off                | On      |
 | `Recently added count` | Controls how many recent bookmarks are shown when Recently Added is enabled. | `10`, `25`, `50`, `100` | `10`    |
@@ -230,14 +261,15 @@ Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing
 
 #### Look & Feel
 
-| Setting                    | What it does                                                                   | Values                                                                                                                           | Default                |
-| -------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| `Language`                 | Overrides the extension UI language independently of browser language.         | `Use browser language` or one of: `de`, `en_CA`, `en_US`, `es`, `fr`, `fr_CA`, `it`, `ja`, `ko`, `nl`, `pt_BR`, `zh_CN`, `zh_TW` | `Use browser language` |
-| `Appearance`               | Chooses whether the extension follows system colors or forces light/dark mode. | `System`, `Light`, `Dark`                                                                                                        | `System`               |
-| `Theme`                    | Changes bookmark/folder icon styling set.                                      | `Default`, `Classic`, `Bookmark Keep`                                                                                            | `Default`              |
-| `Density`                  | Adjusts list spacing and compactness.                                          | `Default`, `Comfortable`, `Compact`                                                                                              | `Default`              |
-| `Sync with tab zoom`       | Matches sidebar text size to the active tab zoom level.                        | On / Off                                                                                                                         | On                     |
-| `Auto-close in fullscreen` | Automatically closes the sidebar when a page enters fullscreen mode.           | On / Off                                                                                                                         | On                     |
+| Setting                            | What it does                                                                          | Values                                                                                                                           | Default                |
+| ---------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| `Language`                         | Overrides the extension UI language independently of browser language.                | `Use browser language` or one of: `de`, `en_CA`, `en_US`, `es`, `fr`, `fr_CA`, `it`, `ja`, `ko`, `nl`, `pt_BR`, `zh_CN`, `zh_TW` | `Use browser language` |
+| `Appearance`                       | Chooses whether the extension follows system colors or forces light/dark mode.        | `System`, `Light`, `Dark`                                                                                                        | `System`               |
+| `Theme`                            | Changes bookmark/folder icon styling set.                                             | `Default`, `Classic`, `Bookmark Keep`                                                                                            | `Default`              |
+| `Density`                          | Adjusts list spacing and compactness.                                                 | `Default`, `Comfortable`, `Compact`                                                                                              | `Default`              |
+| `Sync with tab zoom`               | Matches sidebar text size to the active tab zoom level.                               | On / Off                                                                                                                         | On                     |
+| `Auto-close in fullscreen`         | Automatically closes the sidebar when a page enters fullscreen mode.                  | On / Off                                                                                                                         | On                     |
+| `Run rules when sidebar is closed` | Runs enabled auto-save bookmark rules in the background when the sidebar is not open. | On / Off                                                                                                                         | Off                    |
 
 #### Other
 
@@ -288,12 +320,13 @@ Open an issue here:
 
 When filing, include:
 
-- Browser (`Chrome`, `Edge`, or `Firefox`) and version
+- Browser and browser version
 - Extension version
-- OS
-- Reproduction steps
-- Expected vs actual behavior
-- Screenshot/screen recording when possible
+- Locale
+- Whether tab permissions were granted (if issue involves tabs/tab groups)
+- Exact reproduction steps
+- Expected behavior vs actual behavior
+- Console logs and screenshots/screen recording when possible
 
 ## Useful Links
 
