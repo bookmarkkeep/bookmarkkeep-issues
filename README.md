@@ -1,8 +1,12 @@
-<p align="center">
-  <img src="assets/icon128.png" alt="Bookmark Keep logo" width="96" />
-</p>
-
-# Bookmark Keep
+<h1 align="center">
+  <img
+    src="assets/icon128.png"
+    alt="Bookmark Keep logo"
+    width="56"
+    style="vertical-align: middle; margin-right: 10px;"
+  />
+  <span style="vertical-align: middle;">Bookmark Keep</span>
+</h1>
 
 Bookmark Keep is a Chrome, Firefox, and Edge side panel extension for organizing and finding bookmarks faster.
 
