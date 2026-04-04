@@ -29,6 +29,7 @@ Homepage: https://bookmarkkeep.app
 - Filters and views (duplicates, empty folders, newest/oldest, domain view)
 - Tags with quick tagging workflows and tag-based search
 - Multi-select with bulk actions (open, move, tag, delete)
+- Import mixed URL lists into one folder (plain text, Markdown, basic HTML lists)
 - Drag and drop reordering, including cross-folder moves
 - Smart drop suggestions for where new URLs should be saved & rule-based logic
 - Light and dark appearance modes with localized UI
@@ -147,6 +148,9 @@ Homepage: https://bookmarkkeep.app
 - Bulk move
 - Bulk tag
 - Bulk delete with count confirmation
+- Import URL lists into one folder from plain text, Markdown links, or basic HTML lists
+- Skips duplicates already in the destination folder and duplicates in the same import
+- Import summary reports added, skipped duplicates, and invalid URLs
 
 ### Tabs & Tab Groups Integration
 
