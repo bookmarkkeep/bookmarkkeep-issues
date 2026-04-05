@@ -12,10 +12,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Bulk import of urls
 - Adds recent searches
 
-
 ### Changed
 
 ### Fixed
+
+## [1.2.X] - skipped
 
 ## [1.1.3] - 2026-03-21
 
