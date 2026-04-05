@@ -10,18 +10,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 ### Added
 
 - Bulk import of urls
-
-### Changed
-
-
-### Fixed
-
-
-## [1.2.0] - 2026-03-22
-
-### Added
-
 - Adds recent searches
+
 
 ### Changed
 
